@@ -1,0 +1,45 @@
+{
+	"code": 0,
+	"data": [{
+		"tag_id": 63700,
+		"tag_name": "日本动画",
+		"cover": "http://static.hdslb.com/images/transparent.gif",
+		"content": "",
+		"type": 3,
+		"state": 0,
+		"ctime": 1436866637,
+		"count": {
+			"view": 0,
+			"use": 9385,
+			"atten": 20330
+		},
+		"is_atten": 0,
+		"likes": 0,
+		"hates": 0,
+		"attribute": 0,
+		"liked": 0,
+		"hated": 0
+	},
+	{
+		"tag_id": 25025,
+		"tag_name": "熟肉",
+		"cover": "http://static.hdslb.com/images/transparent.gif",
+		"content": "",
+		"type": 0,
+		"state": 0,
+		"ctime": 1436866637,
+		"count": {
+			"view": 0,
+			"use": 8861,
+			"atten": 991
+		},
+		"is_atten": 0,
+		"likes": 0,
+		"hates": 0,
+		"attribute": 0,
+		"liked": 0,
+		"hated": 0
+	}],
+	"message": "0",
+	"ttl": 1
+}
