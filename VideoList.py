@@ -115,19 +115,21 @@ if __name__=="__main__":
     total_pages = get_total_pages(get_pages_url)
     get_video_list_url = "https://api.bilibili.com/archive_rank/getarchiverankbypartion?tid=32"
     #建立线程
-    t1 = MyThread(1, 200, get_video_list_url)
-    t2 = MyThread(201, 400, get_video_list_url)
-    t3 = MyThread(601, total_pages, get_video_list_url)
-    t1.start()
-    t2.start()
-    t3.start()
-    t1.join()
-    t2.join()
-    t3.join()
+    thread_pool = []
+    num  = total_pages//8
+    for i in range(8):
+        if(i<8):
+            thread = MyThread(num*i+1,num*(i+1),get_video_list_url)
+        else: # 最后一个要单独设置尾页
+            thread = MyThread(num*i+1,total_pages,get_video_list_url)
+        thread_pool.append(thread)
+    for each in thread_pool:
+        each.start()
+    for each in thread_pool:
+        each.join()
     video_info_list = []
-    video_info_list.extend(t1.get_result())
-    video_info_list.extend(t2.get_result())
-    video_info_list.extend(t3.get_result())
+    for each in thread_pool:
+        video_info_list.extend(each.get_result())
     print(len(video_info_list))
     right_video_info_list = []
     for j in video_info_list:
